@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3BCC1181BA3AA7700FEC888"
-               BuildableName = "ConurrentByGCD"
-               BlueprintName = "ConurrentByGCD"
-               ReferencedContainer = "container:ConurrentByGCD.xcodeproj">
+               BlueprintIdentifier = "A364A63A1B2FFABB004BB0B5"
+               BuildableName = "GrandCentralDispatch.app"
+               BlueprintName = "GrandCentralDispatch"
+               ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A364A6561B2FFABC004BB0B5"
+               BuildableName = "GrandCentralDispatchTests.xctest"
+               BlueprintName = "GrandCentralDispatchTests"
+               ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +42,24 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A364A6561B2FFABC004BB0B5"
+               BuildableName = "GrandCentralDispatchTests.xctest"
+               BlueprintName = "GrandCentralDispatchTests"
+               ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3BCC1181BA3AA7700FEC888"
-            BuildableName = "ConurrentByGCD"
-            BlueprintName = "ConurrentByGCD"
-            ReferencedContainer = "container:ConurrentByGCD.xcodeproj">
+            BlueprintIdentifier = "A364A63A1B2FFABB004BB0B5"
+            BuildableName = "GrandCentralDispatch.app"
+            BlueprintName = "GrandCentralDispatch"
+            ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3BCC1181BA3AA7700FEC888"
-            BuildableName = "ConurrentByGCD"
-            BlueprintName = "ConurrentByGCD"
-            ReferencedContainer = "container:ConurrentByGCD.xcodeproj">
+            BlueprintIdentifier = "A364A63A1B2FFABB004BB0B5"
+            BuildableName = "GrandCentralDispatch.app"
+            BlueprintName = "GrandCentralDispatch"
+            ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3BCC1181BA3AA7700FEC888"
-            BuildableName = "ConurrentByGCD"
-            BlueprintName = "ConurrentByGCD"
-            ReferencedContainer = "container:ConurrentByGCD.xcodeproj">
+            BlueprintIdentifier = "A364A63A1B2FFABB004BB0B5"
+            BuildableName = "GrandCentralDispatch.app"
+            BlueprintName = "GrandCentralDispatch"
+            ReferencedContainer = "container:GrandCentralDispatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

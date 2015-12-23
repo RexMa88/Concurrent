@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ConurrentByGCD.xcscheme</key>
+		<key>GrandCentralDispatch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A3BCC1181BA3AA7700FEC888</key>
+		<key>A364A63A1B2FFABB004BB0B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A364A6561B2FFABC004BB0B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
