@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) UIButton *clickButton;
+
 @end
 
 @implementation ViewController
@@ -22,6 +24,29 @@
 //    [self createGroup];
 //    [self createAsyncQueue];
 //    [self createDelay];
+//    [self createSerialAndConcurrentTest];
+    [self customButton];
+    [self dispatchApplyTest];
+}
+
+#pragma mark - Button
+
+- (void)customButton{
+    self.clickButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.clickButton.frame = CGRectMake(0, 100, 200, 50);
+    self.clickButton.backgroundColor = [UIColor redColor];
+    [self.clickButton addTarget:self action:@selector(createSerialAndConcurrentTest) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.clickButton];
+}
+
+#pragma mark - dispatch_apply
+
+- (void)dispatchApplyTest{
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_apply(10, queue, ^(size_t index) {
+        NSLog(@"The index is %zu",index);
+    });
+    
 }
 
 #pragma mark - dispatch_after
@@ -33,6 +58,22 @@
     });
     
 }
+
+#pragma mark - (dispatch_queue_serial && dispatch_queue_concurrent) && dispatch_async && dispatch_sync)
+
+- (void)createSerialAndConcurrentTest{
+    dispatch_queue_t serialQueue = dispatch_queue_create("RexMaSerialQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t concurrentQueue =dispatch_queue_create("RexMaConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_sync(concurrentQueue, ^{
+        NSLog(@"The ConcurrentQueue");
+        dispatch_sync(concurrentQueue, ^{
+            NSLog(@"Fuck off");
+        });
+    });
+    NSLog(@"ByeBye");
+}
+
+
 
 #pragma mark - dispatch_queue
 
