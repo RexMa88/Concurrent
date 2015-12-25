@@ -26,7 +26,7 @@
 //    [self createDelay];
 //    [self createSerialAndConcurrentTest];
     [self customButton];
-    [self dispatchApplyTest];
+//    [self dispatchApplyTest];
 }
 
 #pragma mark - Button
@@ -64,13 +64,23 @@
 - (void)createSerialAndConcurrentTest{
     dispatch_queue_t serialQueue = dispatch_queue_create("RexMaSerialQueue", DISPATCH_QUEUE_SERIAL);
     dispatch_queue_t concurrentQueue =dispatch_queue_create("RexMaConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_sync(concurrentQueue, ^{
-        NSLog(@"The ConcurrentQueue");
-        dispatch_sync(concurrentQueue, ^{
-            NSLog(@"Fuck off");
+    dispatch_async(concurrentQueue, ^{
+        NSString *isMain = [[NSThread currentThread] isMainThread]?@"YES":@"NO";
+        NSThread *thread = [NSThread currentThread];
+        NSLog(@"The dispatch inner is %@",isMain);
+        NSLog(@"The inner thread is %@",thread);
+        dispatch_async(concurrentQueue, ^{
+            NSString *isMain = [[NSThread currentThread] isMainThread]?@"YES":@"NO";
+            NSThread *thread = [NSThread currentThread];
+            NSLog(@"The dispatch inner inner is %@",isMain);
+            NSLog(@"The inner inner thread is %@",thread);
         });
     });
-    NSLog(@"ByeBye");
+    NSString *isMain = [[NSThread currentThread] isMainThread]?@"YES":@"NO";
+    NSThread *thread = [NSThread currentThread];
+    NSLog(@"The dispatch outter is %@",isMain);
+    NSLog(@"The outter thread is %@",thread);
+//    NSLog(@"");
 }
 
 
